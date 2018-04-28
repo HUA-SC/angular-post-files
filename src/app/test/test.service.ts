@@ -8,7 +8,7 @@ export class TestService {
   constructor(private http: Http) {
   }
 
-  private url = 'http://127.0.0.1:3001';
+  private url = 'http://118.24.83.20:3001';
 
 
   /**

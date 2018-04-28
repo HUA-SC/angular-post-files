@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/toPromise';
-import {Http, HttpModule} from '@angular/http';
+import {Http} from '@angular/http';
 
 
 @Injectable()
@@ -8,7 +8,7 @@ export class TestService {
   constructor(private http: Http) {
   }
 
-  private url = 'http://118.24.83.20:3001';
+  private url = 'http://127.0.0.1:3001';
 
 
   /**
@@ -25,6 +25,7 @@ export class TestService {
    * @returns {Promise<any>}
    */
   sub(data): Promise<any> {
+
     let formData = new FormData();
     formData.append('user_id', '5ae0129ee0353d06c3248538');
     formData.append('content', '???454');
@@ -34,7 +35,7 @@ export class TestService {
     }
     return this.http
       .post(this.url + '/add/question',
-        formData)
+        formData,{withCredentials:true})
       .toPromise()
       .then(res => res.json())
       .catch(this.handleError);

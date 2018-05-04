@@ -89,4 +89,11 @@ export class TestService {
       .then(res => res.json())
       .catch(this.handleError)
   }
+  logout(){
+    return this.http
+      .get(this.url+'/logOut',{withCredentials:true})
+      .toPromise()
+      .then(res => res.json())
+      .catch(this.handleError)
+  }
 }

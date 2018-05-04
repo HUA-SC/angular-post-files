@@ -28,4 +28,11 @@ export class TestComponent {
       console.log('请求的session数据：',res);
     })
   }
+  logout(){
+    this.testService.logout().then(res =>{
+      console.log('登出返回的数据：',res);
+    })
+  }
+
+
 }

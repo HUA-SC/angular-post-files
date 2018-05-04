@@ -15,10 +15,16 @@
     <h4>login</h4>
     <input #user name="user"/>
     <input #password name="password"/>
-    <button  (click)="log(user.value,password.value)">submit</button>
+    <button  (click)="log(user.value,password.value)">login</button>
 
     <br/>
     <br/>
     <br/>
     <hr>
-    <button  (click)="querySession()">submit</button>
+    <button  (click)="querySession()">session</button>
+
+    <br/>
+    <br/>
+    <br/>
+    <hr>
+    <button  (click)="logout()">out</button>

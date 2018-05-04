@@ -14,9 +14,18 @@ export class TestComponent {
   sub(d) {
     console.log(d);
     this.testService.sub(d).then(res => {
-      console.log('--------------result8sadfa------------');
-      console.log(res);
+      console.log('表单提交返回数据：',res);
     });
   }
+  log(user,pwd){
+    this.testService.log(user,pwd).then(res =>{
+      console.log('登录返回数据：',res);
+    })
+  }
 
+  querySession(){
+    this.testService.querySession().then(res =>{
+      console.log('请求的session数据：',res);
+    })
+  }
 }

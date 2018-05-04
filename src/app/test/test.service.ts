@@ -40,12 +40,11 @@ export class TestService {
       .then(res => res.json())
       .catch(this.handleError);
   }
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
   }
-
-
 
   /**
    * 在angular5中，@angular/http貌似被废弃了，改为使用@angular/common/http方式
@@ -76,4 +75,18 @@ export class TestService {
   // }
 
 
+  log(user,password){
+    return this.http
+      .post(this.url+'/login',{user:user,password:password},{withCredentials:true})
+      .toPromise()
+      .then(res => res.json())
+      .catch(this.handleError)
+  }
+  querySession(){
+    return this.http
+      .post(this.url+'/query/session',{},{withCredentials:true})
+      .toPromise()
+      .then(res => res.json())
+      .catch(this.handleError)
+  }
 }

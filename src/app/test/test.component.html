@@ -5,3 +5,20 @@
   <input #data name='data' type="file" multiple>
 </form>
     <button type="submit" (click)="sub(data.files)">submit</button>
+
+
+    <br/>
+    <br/>
+    <br/>
+    <hr>
+
+    <h4>login</h4>
+    <input #user name="user"/>
+    <input #password name="password"/>
+    <button  (click)="log(user.value,password.value)">submit</button>
+
+    <br/>
+    <br/>
+    <br/>
+    <hr>
+    <button  (click)="querySession()">submit</button>

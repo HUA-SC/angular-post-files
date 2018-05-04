@@ -9,6 +9,7 @@ export class TestService {
   }
 
   private url = 'http://118.24.83.20:3001';
+  // private url = 'http://127.0.0.1:3001';
 
 
   /**
@@ -30,6 +31,7 @@ export class TestService {
     formData.append('user_id', '5ae0129ee0353d06c3248538');
     formData.append('content', '???454');
     formData.append('courseId', '5ae13334da48a502006ede91');
+    formData.append('title', '提问测试');
     for (let img of data) {
       formData.append('img', img);
     }
